@@ -1,0 +1,37 @@
+<mat-toolbar color="primary">
+  <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon">
+    <mat-icon>logout</mat-icon>
+  </button>
+  <span>CQS-Task</span>
+  <span class="example-spacer"></span>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+    <mat-drawer #drawer class="example-sidenav" mode="side">
+      <mat-list>
+        <div mat-subheader>ADMIN-CQS</div>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>home</mat-icon>
+          <div matListItemTitle routerLink="/admin-dashboard">Home</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>person</mat-icon>
+          <div matListItemTitle routerLink="/employee">Employee</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>create_new_folder</mat-icon>
+          <div matListItemTitle routerLink="/add-project">Add New Project</div>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+          <mat-icon matListItemIcon>add_task</mat-icon>
+          <div matListItemTitle routerLink="/add-task">Add New Task</div>
+        </mat-list-item>
+      </mat-list>
+    </mat-drawer>
+  </mat-drawer-container>

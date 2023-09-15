@@ -1,0 +1,54 @@
+<app-admsidenav></app-admsidenav>
+<h2 style="color: #969494; margin-left: 20rem;"><mat-icon>add_task</mat-icon>&nbsp;&nbsp;Add New Task</h2>
+<mat-divider style="margin-left: 20rem;"></mat-divider>
+<div class="example" style="margin-top: 5px; margin-left: 20rem;">
+    <div class="forms">
+        <form #projectForm="ngForm" (ngSubmit)="onAddTask(projectForm.value)">
+            <p>
+                <mat-form-field style="width: 400px;">
+                    <mat-label>Title</mat-label>
+                    <input matInput placeholder="Ex.Ecom Project" name="Title" ngModel required="true">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Expected Completion</mat-label>
+                    <input matInput [matDatepicker]="picker" name="ExpectedCompletion" ngModel>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field style="width: 400px;">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput cols="50" name="Description" ngModel></textarea>
+                  </mat-form-field>
+            </p>
+            <p>  
+                <mat-form-field>
+                <mat-label>Project</mat-label>
+                <mat-select name="ProjectId" ngModel required="true">
+                  <mat-option *ngFor="let p of project" [value]="p.id">{{p.projectName}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Assign to</mat-label>
+                <mat-select name="AssigneeId" ngModel required="true">
+                  <mat-option *ngFor="let a of assignee" [value]="a.id">{{a.name}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <mat-form-field>
+                <mat-label>Priority</mat-label>
+                <mat-select name="Priority" ngModel required="true">
+                  <mat-option value="HIGH">HIGH</mat-option>
+                  <mat-option value="MOD">MODERATE</mat-option>
+                  <mat-option value="LOW">LOW</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+            <p style="color: red;text-align: center;">{{response.Message}}</p>
+            <p style="text-align: center;">
+                <button type="submit" mat-raised-button color="primary"><mat-icon>add</mat-icon> ADD TASK</button>
+            </p>      
+        </form>
+        </div>
+  </div>

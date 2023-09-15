@@ -1,0 +1,54 @@
+<app-header></app-header>
+<div class="login-box" *ngIf="adminLogin">
+  <mat-icon color="primary">admin_panel_settings</mat-icon>   
+  <h2>Admin Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onAdminLogin(loginForm.value)">
+        <p>
+        <mat-form-field appearance="fill">
+            <mat-label>Username</mat-label>
+            <input matInput name="UserName" ngModel placeholder="Username">
+            <mat-icon matSuffix>person</mat-icon>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="fill">
+            <mat-label>Password</mat-label>
+            <input type="password" name="Password" ngModel matInput placeholder="Password" required="true">
+            <mat-icon matSuffix>key</mat-icon>
+          </mat-form-field>
+        </p>
+        <button (click)="userLoginBox()" mat-button color="primary">Employee Login</button>
+        <p style="color:red;">
+          {{loginresponse.Message}}
+        </p>
+        <p>
+            <button type="submit" mat-raised-button color="primary">Login</button>
+        </p>
+    </form>
+</div>
+<div class="login-box" style="animation: 1s ease-out 0s 1 slideInFromLeft;" *ngIf="userLogin">
+  <mat-icon color="primary">account_circle</mat-icon> 
+  <h2>Employee Login</h2>
+  <form #loginForm="ngForm" (ngSubmit)="onUserLogin(loginForm.value)">
+      <p>
+      <mat-form-field appearance="fill">
+          <mat-label>Username</mat-label>
+          <input matInput name="Username" ngModel placeholder="Username">
+          <mat-icon matSuffix>person</mat-icon>
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field appearance="fill">
+          <mat-label>Password</mat-label>
+          <input type="password" name="Password" ngModel matInput placeholder="Password" required="true">
+          <mat-icon matSuffix>key</mat-icon>
+        </mat-form-field>
+      </p>
+      <button (click)="adminLoginBox()" mat-button color="primary">Admin Login</button>
+      <p style="color:red;">{{loginresponse.Message}} 
+      </p>
+      <p>
+          <button type="submit" mat-raised-button color="primary">Login</button>
+      </p>
+  </form>
+</div>

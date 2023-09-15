@@ -1,0 +1,24 @@
+.example-ripple-container {
+    cursor: pointer;
+    text-align: center;
+    width: 200px;
+    height: 200px;
+    margin: 20px;
+    border-radius: 10px;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -webkit-user-drag: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .example-ripple-container:hover{
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  }
+  .actions{
+    margin-left: 16rem;
+    display: flex;
+    flex-wrap: wrap;
+  }
+  h1{
+    margin-top: 60px;
+  }

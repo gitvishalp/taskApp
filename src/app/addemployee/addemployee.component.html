@@ -1,0 +1,53 @@
+<app-admsidenav></app-admsidenav>
+<h2 style="color: #969494; margin-left: 16rem;"><mat-icon>person_add</mat-icon>&nbsp;&nbsp;Add New Employee</h2>
+<mat-divider style="margin-left: 16rem;"></mat-divider>
+<div class="example" style="margin-top: 5px; margin-left: 16rem;">
+    <div class="forms">
+        <form #employeeForm="ngForm" (ngSubmit)="onAddEmployee(employeeForm.value)">
+            <p>
+                <mat-form-field>
+                    <mat-label>Employee Name</mat-label>
+                    <input matInput placeholder="Ex. Jhon Doe"  name="Name" ngModel required="true">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Designition</mat-label>
+                    <mat-select name="Designition" ngModel required="true">
+                      <mat-option value="SOFTENG">Software Engineer</mat-option>
+                      <mat-option value="TRAIN">Software Engg. Trainee</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Date of Birth</mat-label>
+                    <input matInput [matDatepicker]="picker" name="DOB" ngModel required="true">
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field>
+                    <mat-label>Employee Email</mat-label>
+                    <input type="email" matInput placeholder="pat@example.com" name="Email" ngModel required="true">
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Phone Number</mat-label>
+                    <input matInput placeholder="Ex. 1111-1111-11" name="PhoneNumber" ngModel required="true">
+                    <mat-icon matSuffix>phone</mat-icon>
+                  </mat-form-field>
+                  <mat-form-field>
+                    <mat-label>Role</mat-label>
+                    <mat-select name="Role" ngModel>
+                      <mat-option value="ADMIN">Admin</mat-option>
+                      <mat-option value="EMP">Employee</mat-option>
+                      <mat-option value="TL">Team Lead</mat-option>
+                    </mat-select>
+                  </mat-form-field>
+            </p>
+            <p style="color: red;text-align: center;">{{response.Message}}</p>
+            <p style="text-align: center;">
+                <button type="submit" mat-raised-button color="primary"><mat-icon>add</mat-icon> ADD EMPLOYEE</button>
+            </p>      
+        </form>
+    </div>
+   
+  </div>

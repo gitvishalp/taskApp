@@ -1,0 +1,34 @@
+<app-admsidenav></app-admsidenav>
+<h2 style="color: #969494; margin-left: 25rem;"><mat-icon>create_new_folder</mat-icon>&nbsp;&nbsp;Add New Project</h2>
+<mat-divider style="margin-left: 25rem;"></mat-divider>
+<div class="example" style="margin-top: 5px; margin-left: 25rem;">
+    <div class="forms">
+        <form #projectForm="ngForm" (ngSubmit)="onAddProject(projectForm.value)">
+            <p>
+                <mat-form-field style="width: 400px;">
+                    <mat-label>Project Title</mat-label>
+                    <input matInput placeholder="Ex.Ecom Project" name="Title" ngModel required="true">
+                  </mat-form-field>
+            </p>
+            <p>
+                <mat-form-field style="width: 400px;">
+                    <mat-label>Description</mat-label>
+                    <textarea matInput cols="50" name="Description" ngModel></textarea>
+                  </mat-form-field>
+            </p>
+            <p>
+                  <mat-form-field>
+                    <mat-label>Expected Completion</mat-label>
+                    <input matInput [matDatepicker]="picker" name="ExpectedCompletionDate" ngModel>
+                    <mat-hint>MM/DD/YYYY</mat-hint>
+                    <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                  </mat-form-field>
+            </p>
+            <p style="color: red;text-align: center;">{{response.Message}}</p>
+            <p style="text-align: center;">
+                <button type="submit" mat-raised-button color="primary"><mat-icon>add</mat-icon> ADD PROJECT</button>
+            </p>      
+        </form>
+        </div>
+  </div>
