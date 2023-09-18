@@ -69,6 +69,11 @@ addTask(formdata:{Title:String,Description:String,ProjectId:String,Priority:Stri
   const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
   return this.http.post('http://localhost:8081/v1/admin/AddTask',formdata,{headers:header});
 }
+updateTask(formdata:{AssigneeId:String,ExpectedCompletion:Date,Status:String,Priority:String,Remarks:String},taskId:any){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+  return this.http.put(`http://localhost:8081/v1/admin/UpdateTask/${taskId}`,formdata,{headers:header});
+}
+
 getAllEmployee(){
   const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
   return this.http.get('http://localhost:8081/v1/admin/employee',{headers:header});
@@ -77,16 +82,29 @@ getAllProject(){
   const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
   return this.http.get('  http://localhost:8081/v1/admin/project',{headers:header});
 }
+getAllTask(){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+  return this.http.get('  http://localhost:8081/v1/admin/task',{headers:header});
+}
+
+getTaskByEmployee(empId:any){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+  return this.http.get(`http://localhost:8081/v1/admin/task-by-employee/${empId}`,{headers:header});
+}
+getTaskByProject(projectId:any){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+  return this.http.get(`http://localhost:8081/v1/admin/task-by-project/${projectId}`,{headers:header});
+}
 deleteEmployee(empId:String){
   const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
   return this.http.delete(`http://localhost:8081/v1/admin/employee/${empId}`,{headers:header});
 }
+deleteProject(projectId:String){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+  return this.http.delete(`http://localhost:8081/v1/admin/Project/${projectId}`,{headers:header});
+}
 deleteTaskById(taskId:String){
   const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
   return this.http.delete(`http://localhost:8081/v1/admin/Task/${taskId}`,{headers:header});
-}
-getTaskByEmployee(empId:any){
-  const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
-  return this.http.get(`http://localhost:8081/v1/admin/task-by-employee/${empId}`,{headers:header});
 }
 }

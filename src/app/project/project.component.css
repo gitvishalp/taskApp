@@ -1,11 +1,7 @@
-.container{
-    margin-left: 17rem;
-    margin-right: 1rem ;
+.demo-table {
+    width: 100%;
   }
-  .message{
-    color: red;
-    text-align: center;
-  }
+  
   .demo-button-container {
     margin-top: 10px;
     text-align: right;
@@ -14,4 +10,12 @@
   
   .demo-button + .demo-button {
     margin-left: 8px;
+  }
+  .container{
+    margin-left: 17rem;
+    margin-right: 1rem ;
+  }
+  .message{
+    color: red;
+    text-align: center;
   }

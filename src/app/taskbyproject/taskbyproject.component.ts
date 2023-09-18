@@ -3,21 +3,22 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { AdminService } from '../admin.service';
 
 @Component({
-  selector: 'app-taskbyemployee',
-  templateUrl: './taskbyemployee.component.html',
-  styleUrls: ['./taskbyemployee.component.css']
+  selector: 'app-taskbyproject',
+  templateUrl: './taskbyproject.component.html',
+  styleUrls: ['./taskbyproject.component.css']
 })
-export class TaskbyemployeeComponent implements OnInit {
+export class TaskbyprojectComponent implements OnInit {
+
 
   constructor(private route:ActivatedRoute,private router:Router, private adminService:AdminService){
 
   }
-  empId = this.route.snapshot.queryParamMap.get("employeeId");
+  projectId = this.route.snapshot.queryParamMap.get("projectId");
   displayedColumns: string[] = ['id','project','title','description','priority','status','expectedCompletionDate','action'];
   dataSource:any = [];
   deleteResponse:any={}
   ngOnInit(): void {
-      this.adminService.getTaskByEmployee(this.empId)
+      this.adminService.getTaskByProject(this.projectId)
       .subscribe((res:any)=>{
           this.dataSource=res.Data
       })
@@ -30,7 +31,7 @@ export class TaskbyemployeeComponent implements OnInit {
      .subscribe(res=>{
       this.deleteResponse=res
       if(this.deleteResponse.Status==200){
-        this.router.navigate(['/employee']);
+        this.router.navigate(['/project']);
       }
      })
   }

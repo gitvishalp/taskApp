@@ -7,6 +7,10 @@ import { AddprojectComponent } from './addproject/addproject.component';
 import { AddtaskComponent } from './addtask/addtask.component';
 import { EmployeeComponent } from './employee/employee.component';
 import { TaskbyemployeeComponent } from './taskbyemployee/taskbyemployee.component';
+import { ProjectComponent } from './project/project.component';
+import { TaskbyprojectComponent } from './taskbyproject/taskbyproject.component';
+import { TaskComponent } from './task/task.component';
+import { UpdatetaskComponent } from './updatetask/updatetask.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -16,7 +20,11 @@ const routes: Routes = [
   { path: 'add-task',component:AddtaskComponent},
   { path:'admin-dashboard',component:AdmindashboardComponent},
   { path:'employee', component:EmployeeComponent},
-  {path: 'task-by-employee',component:TaskbyemployeeComponent}
+  {path: 'task-by-employee',component:TaskbyemployeeComponent},
+  {path:'project',component:ProjectComponent},
+  {path:'task-by-project',component:TaskbyprojectComponent},
+  {path:'task',component:TaskComponent},
+  {path:'update-task',component:UpdatetaskComponent}
 ];
 
 @NgModule({

@@ -3,46 +3,46 @@
     <mat-divider style="margin-left: 16rem;"></mat-divider>
     <div class="actions">
         <div class="example-ripple-container mat-elevation-z4" style="background-color: #FBF7DA;"
-        matRipple
+        matRipple (click)="activeProject()"
         >
         <h1 style="color: #CFC048;">{{activeResponse.Data + inprogressResponse.Data}}</h1>
      Active Projects
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #F0F7D2;"
-        matRipple>
+        matRipple (click)="activeProject()">
         <h1 style="color: #71AD34;">{{completeResponse.Data}}</h1>
      Completed Projects
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #E0FCFB;"
-        matRipple>
+        matRipple (click)="activeProject()">
         <h1 style="color: #3EA29F;">{{pendingResponse.Data}}</h1>
     Pending Projects
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #FCE9E5;"
-        matRipple>
+        matRipple (click)="activeProject()">
         <h1 style="color: #D36E5B;">0</h1>
         Project Issues
     </div>
     </div>
     <div class="actions">
         <div class="example-ripple-container mat-elevation-z4" style="background-color: #FBF7DA;"
-        matRipple
+        matRipple (click)="activeTask()"
         >
         <h1 style="color: #CFC048;">{{activeTaskResponse.Data}}</h1>
      Active Tasks
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #F0F7D2;"
-        matRipple>
+        matRipple (click)="activeTask()">
         <h1 style="color: #71AD34;">{{completeTaskResponse.Data}}</h1>
      Completed Tasks
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #E0FCFB;"
-        matRipple>
+        matRipple (click)="activeTask()">
         <h1 style="color: #3EA29F;">{{pendingTaskResponse.Data}}</h1>
     Pending Tasks
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #FCE9E5;"
-        matRipple>
+        matRipple (click)="activeTask()">
         <h1 style="color: #D36E5B;">0</h1>
         Tasks Issues
     </div>

@@ -35,4 +35,10 @@ export class AdmindashboardComponent implements OnInit {
         this.adminService.dashboardCompletedTask().subscribe(res=>{this.completeTaskResponse=res})
     }
   }
+  activeProject(){
+    this.router.navigate(['/project'])
+  }
+  activeTask(){
+    this.router.navigate(['/task'])
+  }
 }

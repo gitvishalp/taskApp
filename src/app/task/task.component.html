@@ -1,5 +1,5 @@
 <app-admsidenav></app-admsidenav>
-<h2 style="color: #969494; margin-left: 17rem;">Tasks of Employee Id: {{empId}} </h2>
+<h2 style="color: #969494; margin-left: 17rem;">Tasks </h2>
 <mat-divider style="margin-left: 17rem;"></mat-divider>
 <div class="container">
  <div class="demo-button-container">
@@ -28,6 +28,10 @@
         <th mat-header-cell *matHeaderCellDef>Description</th>
         <td mat-cell *matCellDef="let element">{{element.description}}</td>
       </ng-container>
+      <ng-container matColumnDef="Assignee">
+        <th mat-header-cell *matHeaderCellDef>Assignee</th>
+        <td mat-cell *matCellDef="let element">{{element.assignee.name}}</td>
+      </ng-container>
       <ng-container matColumnDef="priority">
         <th mat-header-cell *matHeaderCellDef>Priority</th>
         <td mat-cell *matCellDef="let element">{{element.priority.name}}</td>
@@ -49,7 +53,7 @@
           class="demo-button">
         <mat-icon>border_color</mat-icon>
       </button>
-            <button
+          <button
             mat-stroked-button color="primary"
             (click)="removeTask(element.id)"
             class="demo-button">

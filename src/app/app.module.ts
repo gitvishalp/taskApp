@@ -36,6 +36,10 @@ import { EmployeeComponent } from './employee/employee.component';
 import {MatTable, MatTableModule} from '@angular/material/table';
 import {MatDialog, MatDialogRef, MatDialogModule} from '@angular/material/dialog';
 import { TaskbyemployeeComponent } from './taskbyemployee/taskbyemployee.component';
+import { ProjectComponent } from './project/project.component';
+import { TaskbyprojectComponent } from './taskbyproject/taskbyproject.component';
+import { TaskComponent } from './task/task.component';
+import { UpdatetaskComponent } from './updatetask/updatetask.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -48,6 +52,10 @@ import { TaskbyemployeeComponent } from './taskbyemployee/taskbyemployee.compone
     HeaderComponent,
     EmployeeComponent,
     TaskbyemployeeComponent,
+    ProjectComponent,
+    TaskbyprojectComponent,
+    TaskComponent,
+    UpdatetaskComponent,
   ],
   imports: [
     BrowserModule,
