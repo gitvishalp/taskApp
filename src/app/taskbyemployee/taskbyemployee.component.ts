@@ -13,7 +13,7 @@ export class TaskbyemployeeComponent implements OnInit {
 
   }
   empId = this.route.snapshot.queryParamMap.get("employeeId");
-  displayedColumns: string[] = ['id','project','title','description','priority','status','expectedCompletionDate','action'];
+  displayedColumns: string[] = ['id','project','title','description','priority','status','remark','expectedCompletionDate','action'];
   dataSource:any = [];
   deleteResponse:any={}
   ngOnInit(): void {

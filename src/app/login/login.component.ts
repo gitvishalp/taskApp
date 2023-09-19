@@ -2,6 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
 import { AdminService } from '../admin.service';
+import { EmployeeServiceService } from '../employee-service.service';
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
@@ -10,11 +11,12 @@ import { AdminService } from '../admin.service';
 export class LoginComponent {
   adminLogin=true;
   userLogin=false;
-  constructor(private router:Router, private http:HttpClient,private adminService:AdminService){
+  constructor(private router:Router, private http:HttpClient,private adminService:AdminService,private employeeService:EmployeeServiceService){
 
   }
 
   loginresponse:any={}
+  emploginresponse:any={}
   onAdminLogin(formData:{UserName:String,Password:String}){
     this.adminService.adminLogin(formData)
     .subscribe(res=>{
@@ -25,8 +27,19 @@ export class LoginComponent {
       console.log(this.loginresponse)
     })
   }
-  onUserLogin(FormData:{Usernaem:String,Password:String}){
-    console.log(FormData);
+  onUserLogin(FormData:{Email:String,Password:String}){
+    this.employeeService.employeeLogin(FormData)
+    .subscribe(res=>{
+      this.emploginresponse=res
+      if(this.emploginresponse.Status==200){
+        if(this.emploginresponse.Data.FirstLogin==true){
+          this.router.navigate(['/change-password'])
+        }else{
+          this.router.navigate(['/employee-dashboard'])
+        }
+      }
+      console.log(this.emploginresponse);
+    })
   }
   adminLoginBox(){
     this.adminLogin=true;

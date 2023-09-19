@@ -1,0 +1,18 @@
+.example-container {
+    position:absolute;
+    top:70px;
+    bottom: 0;
+    left: 0;
+    background: #eee;
+   }
+   .example-sidenav {
+     padding: 25px;
+   }
+   mat-list-item:hover {
+    cursor: pointer;
+     background-color: rgb(208, 208, 208);
+   }
+   
+   mat-list-item:active {
+     background-color: rgb(170, 170, 170);
+   }

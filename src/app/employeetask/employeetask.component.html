@@ -1,15 +1,7 @@
-<app-admsidenav></app-admsidenav>
-<h2 style="color: #969494; margin-left: 1rem;">Tasks of Employee Id: {{empId}} </h2>
-<mat-divider style="margin-left: 1rem;"></mat-divider>
+<app-empsidenav></app-empsidenav>
+<h2 style="color: #969494; margin-left: 1rem;">My Tasks</h2>
+<mat-divider></mat-divider>
 <div class="container">
- <div class="demo-button-container">
-    <button mat-raised-button color="primary" routerLink="/add-task" class="demo-button">
-     <mat-icon>add</mat-icon>&nbsp;Add New Task
-    </button>
-  </div>
-  <div class="message">
-    <p>{{deleteResponse.Message}}</p>
-  </div>
   <table mat-table [dataSource]="dataSource" class="mat-elevation-z8 demo-table"> 
     <!-- Name Column -->
     <ng-container matColumnDef="id">
@@ -53,12 +45,6 @@
           class="demo-button">
         <mat-icon>border_color</mat-icon>
       </button>
-            <button
-            mat-stroked-button color="primary"
-            (click)="removeTask(element.id)"
-            class="demo-button">
-          <mat-icon>delete</mat-icon>
-        </button>
         </td>
       </ng-container>
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>

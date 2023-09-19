@@ -13,7 +13,7 @@ export class TaskComponent {
   constructor(private route:ActivatedRoute,private router:Router, private adminService:AdminService){
 
   }
-  displayedColumns: string[] = ['id','project','title','Assignee','description','priority','status','expectedCompletionDate','action'];
+  displayedColumns: string[] = ['id','project','title','Assignee','description','priority','status','remark','expectedCompletionDate','action'];
   dataSource:any = [];
   deleteResponse:any={}
   ngOnInit(): void {

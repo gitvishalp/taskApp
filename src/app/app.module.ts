@@ -40,6 +40,11 @@ import { ProjectComponent } from './project/project.component';
 import { TaskbyprojectComponent } from './taskbyproject/taskbyproject.component';
 import { TaskComponent } from './task/task.component';
 import { UpdatetaskComponent } from './updatetask/updatetask.component';
+import { EmployeedashboardComponent } from './employeedashboard/employeedashboard.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { EmpsidenavComponent } from './empsidenav/empsidenav.component';
+import { EmployeetaskComponent } from './employeetask/employeetask.component';
+import { EmployeeprojectComponent } from './employeeproject/employeeproject.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,6 +61,11 @@ import { UpdatetaskComponent } from './updatetask/updatetask.component';
     TaskbyprojectComponent,
     TaskComponent,
     UpdatetaskComponent,
+    EmployeedashboardComponent,
+    ChangepasswordComponent,
+    EmpsidenavComponent,
+    EmployeetaskComponent,
+    EmployeeprojectComponent,
   ],
   imports: [
     BrowserModule,

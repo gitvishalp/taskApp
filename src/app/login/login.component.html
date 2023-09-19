@@ -32,8 +32,8 @@
   <form #loginForm="ngForm" (ngSubmit)="onUserLogin(loginForm.value)">
       <p>
       <mat-form-field appearance="fill">
-          <mat-label>Username</mat-label>
-          <input matInput name="Username" ngModel placeholder="Username">
+          <mat-label>Email</mat-label>
+          <input matInput name="Email" ngModel placeholder="Ex. user@cqs.in">
           <mat-icon matSuffix>person</mat-icon>
         </mat-form-field>
       </p>
@@ -45,7 +45,7 @@
         </mat-form-field>
       </p>
       <button (click)="adminLoginBox()" mat-button color="primary">Admin Login</button>
-      <p style="color:red;">{{loginresponse.Message}} 
+      <p style="color:red;">{{emploginresponse.Message}} 
       </p>
       <p>
           <button type="submit" mat-raised-button color="primary">Login</button>

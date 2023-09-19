@@ -14,7 +14,7 @@ export class TaskbyprojectComponent implements OnInit {
 
   }
   projectId = this.route.snapshot.queryParamMap.get("projectId");
-  displayedColumns: string[] = ['id','project','title','description','priority','status','expectedCompletionDate','action'];
+  displayedColumns: string[] = ['id','project','title','description','priority','status','remark','expectedCompletionDate','action'];
   dataSource:any = [];
   deleteResponse:any={}
   ngOnInit(): void {

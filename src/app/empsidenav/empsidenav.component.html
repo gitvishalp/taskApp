@@ -1,0 +1,42 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" (click)="drawer.toggle()" aria-label="Example icon-button with menu icon" alt-text="menu">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>CQS-Task</span>
+    <button mat-icon-button class="example-icon" routerLink="/employee-dashboard" aria-label="Example icon-button with menu icon" style="margin-left: 25px;">
+      <mat-icon>home</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" routerLink="/emp-project" aria-label="Example icon-button with menu icon" style="margin-left: 10px;">
+      <mat-icon>account_tree</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" routerLink="/emp-task" aria-label="Example icon-button with menu icon" style="margin-left: 10px;">
+      <mat-icon>task_alt</mat-icon>
+    </button>
+    <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon" style="margin-left: auto;margin-right: 0;">
+      <mat-icon>logout</mat-icon>
+    </button>
+    <span class="example-spacer"></span>
+  </mat-toolbar>
+  <mat-drawer-container class="example-container" autosize>
+      <mat-drawer #drawer class="example-sidenav" mode="side">
+        <mat-list>
+          <div mat-subheader><mat-icon>person</mat-icon> {{employee.Data.name}}</div>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <mat-icon matListItemIcon>home</mat-icon>
+            <div matListItemTitle routerLink="/employee-dashboard">Home</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <mat-icon matListItemIcon>account_tree</mat-icon>
+            <div matListItemTitle routerLink="/emp-project">My Projects</div>
+          </mat-list-item>
+          <mat-divider></mat-divider>
+          <mat-list-item>
+            <mat-icon matListItemIcon>task_alt</mat-icon>
+            <div matListItemTitle routerLink="/emp-task">My Tasks</div>
+          </mat-list-item>
+        </mat-list>
+      </mat-drawer>
+    </mat-drawer-container>
+  

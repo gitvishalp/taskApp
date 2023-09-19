@@ -11,6 +11,10 @@ import { ProjectComponent } from './project/project.component';
 import { TaskbyprojectComponent } from './taskbyproject/taskbyproject.component';
 import { TaskComponent } from './task/task.component';
 import { UpdatetaskComponent } from './updatetask/updatetask.component';
+import { EmployeedashboardComponent } from './employeedashboard/employeedashboard.component';
+import { ChangepasswordComponent } from './changepassword/changepassword.component';
+import { EmployeetaskComponent } from './employeetask/employeetask.component';
+import { EmployeeprojectComponent } from './employeeproject/employeeproject.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -24,7 +28,11 @@ const routes: Routes = [
   {path:'project',component:ProjectComponent},
   {path:'task-by-project',component:TaskbyprojectComponent},
   {path:'task',component:TaskComponent},
-  {path:'update-task',component:UpdatetaskComponent}
+  {path:'update-task',component:UpdatetaskComponent},
+  {path:'employee-dashboard',component:EmployeedashboardComponent},
+  {path:'change-password',component:ChangepasswordComponent},
+  {path:'emp-task',component:EmployeetaskComponent},
+  {path:'emp-project',component:EmployeeprojectComponent}
 ];
 
 @NgModule({
