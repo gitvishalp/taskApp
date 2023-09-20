@@ -16,16 +16,16 @@ constructor(private router:Router, private adminService:AdminService){
 
 }
 ngOnInit(): void {
-    if(this.adminService.isLogined()==false){
+  if(localStorage.getItem('isLogin')=='false'){
     this.router.navigate(['/login']);
-    }else{
-      this.adminService.getAllProject().subscribe((res:any)=>{
-        this.project=res.Data
-      })
-      this.adminService.getAllEmployee().subscribe((res:any)=>{
-       this.assignee=res.Data
-      });
-    }
+   }else{
+    this.adminService.getAllProject().subscribe((res:any)=>{
+      this.project=res.Data
+    })
+    this.adminService.getAllEmployee().subscribe((res:any)=>{
+     this.assignee=res.Data
+    });
+   }
 }
 onAddTask(formdata:{Title:String,Description:String,ProjectId:String,Priority:String,AssigneeId:String,ExpectedCompletion:Date}){
  console.log(formdata)

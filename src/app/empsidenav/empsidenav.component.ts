@@ -12,16 +12,17 @@ export class EmpsidenavComponent implements OnInit {
 constructor(private router:Router, private EmpService:EmployeeServiceService){}
 employee:any={}
 ngOnInit(): void {
-  if(this.EmpService.isLogined()==false){
+  if(localStorage.getItem('userLogin')=='false'){
     this.router.navigate(['/login'])
-  }
+  }else{
     this.EmpService.getEmployeeDetails()
     .subscribe(res=>{
       this.employee=res
     })
+  }
 }
   logout(){
-  this.EmpService.islogin=false;
-  this.router.navigate(['/login'])
+  this.EmpService.logout();
+  this.router.navigate(['/login']);
   }
 }

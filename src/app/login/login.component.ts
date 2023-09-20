@@ -9,8 +9,8 @@ import { EmployeeServiceService } from '../employee-service.service';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent {
-  adminLogin=true;
-  userLogin=false;
+  adminLogin=false;
+  userLogin=true;
   constructor(private router:Router, private http:HttpClient,private adminService:AdminService,private employeeService:EmployeeServiceService){
 
   }

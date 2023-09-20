@@ -12,9 +12,11 @@
     <button mat-icon-button class="example-icon" routerLink="/emp-task" aria-label="Example icon-button with menu icon" style="margin-left: 10px;">
       <mat-icon>task_alt</mat-icon>
     </button>
-    <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon" style="margin-left: auto;margin-right: 0;">
-      <mat-icon>logout</mat-icon>
-    </button>
+    <div class="info">{{employee.Data.name}}
+      <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon">
+        <mat-icon>logout</mat-icon>
+      </button>
+    </div>
     <span class="example-spacer"></span>
   </mat-toolbar>
   <mat-drawer-container class="example-container" autosize>

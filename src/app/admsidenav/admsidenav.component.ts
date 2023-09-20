@@ -12,7 +12,7 @@ export class AdmsidenavComponent {
 
   }
   logout(){
-    this.adminService.islogin=false;
+    this.adminService.logout();
     this.router.navigate(['/login'])
   }
 }

@@ -14,9 +14,9 @@ export class AddemployeeComponent implements OnInit {
 
   }
 ngOnInit(): void {
-    if(this.adminService.isLogined()==false){
-       this.router.navigate(['/login'])
-    }
+   if(localStorage.getItem('isLogin')=='false'){
+    this.router.navigate(['/login']);
+   }
 }
   response:any={}
   onAddEmployee(FormData:{Name:String,Designition:String,DOB:Date,Email:String,PhoneNumber:String,Role:String}){

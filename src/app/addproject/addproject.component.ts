@@ -14,9 +14,9 @@ constructor(private router:Router, private adminService:AdminService){
 
 }
 ngOnInit(): void {
-  if(this.adminService.isLogined()==false){
-     this.router.navigate(['/login'])
-  }
+  if(localStorage.getItem('isLogin')=='false'){
+    this.router.navigate(['/login']);
+   }
 }
   onAddProject(formData:{Title:String,Description:String,ExpectedCompletionDate:Date}){
     console.log(formData);

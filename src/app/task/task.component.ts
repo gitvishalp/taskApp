@@ -17,10 +17,14 @@ export class TaskComponent {
   dataSource:any = [];
   deleteResponse:any={}
   ngOnInit(): void {
+    if(localStorage.getItem('isLogin')=='false'){
+      this.router.navigate(['/login']);
+     }else{
       this.adminService.getAllTask()
       .subscribe((res:any)=>{
           this.dataSource=res.Data
       })
+    }
   }
   updateTask(taskId:String){
     this.router.navigate(['/update-task'],{queryParams:{taskId:taskId}});

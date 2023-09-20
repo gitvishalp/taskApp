@@ -23,9 +23,9 @@ export class AdmindashboardComponent implements OnInit {
   pendingTaskResponse:any={Data:0}
   completeTaskResponse:any={Data:0}
   ngOnInit(): void {
-    if(this.adminService.isLogined()==false){
-     this.router.navigate(['/login'])
-    }else{
+    if(localStorage.getItem('isLogin')=='false'){
+      this.router.navigate(['/login']);
+     }else{
         this.adminService.dashboardActiveProject().subscribe(res=>{this.activeResponse=res});
         this.adminService.dashboardInprogressProject().subscribe(res=>{this.inprogressResponse=res});
         this.adminService.dashboardPendingProject().subscribe(res=>{this.pendingResponse=res});
@@ -33,8 +33,8 @@ export class AdmindashboardComponent implements OnInit {
         this.adminService.dashboardActiveTask().subscribe(res=>{this.activeTaskResponse=res});
         this.adminService.dashboardPendingTask().subscribe(res=>{this.pendingTaskResponse=res});
         this.adminService.dashboardCompletedTask().subscribe(res=>{this.completeTaskResponse=res})
-    }
   }
+}
   activeProject(){
     this.router.navigate(['/project'])
   }

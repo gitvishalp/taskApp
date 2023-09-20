@@ -13,13 +13,14 @@ export class EmployeetaskComponent implements OnInit{
   dataSource:any = [];
   constructor(private router:Router, private empService:EmployeeServiceService){}
   ngOnInit(): void {
-    if(this.empService.isLogined()==false){
-      this.router.navigate(['/login']);
-    }
+    if(localStorage.getItem('userLogin')=='false'){
+      this.router.navigate(['/login'])
+    }else{
       this.empService.getEmpAllTask()
       .subscribe((res:any)=>{
         this.dataSource=res.Data
       })
+    }
   }
   updateTask(taskId:String){
     this.router.navigate(['/update-task'],{queryParams:{taskId:taskId}});

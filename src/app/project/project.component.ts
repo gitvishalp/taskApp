@@ -18,14 +18,14 @@ export class ProjectComponent implements OnInit {
 
  }
  ngOnInit(): void {
-     if(this.adminService.isLogined()==false){
-     this.router.navigate(['/login'])
-     }else{
+  if(localStorage.getItem('isLogin')=='false'){
+    this.router.navigate(['/login']);
+   }else{
       this.adminService.getAllProject()
       .subscribe((res:any)=>{
         this.dataSource=res.Data
       })
-     }
+    }
  }
  gettask(projectId:String){
   this.router.navigate(['/task-by-project'],{queryParams:{projectId:projectId}});

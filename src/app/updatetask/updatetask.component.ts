@@ -19,9 +19,9 @@ constructor(private router:Router, private route:ActivatedRoute, private adminSe
 }
 taskId= this.route.snapshot.queryParamMap.get("taskId");
 ngOnInit(): void {
-    if(this.adminService.isLogined()==false){
+  if(localStorage.getItem('isLogin')=='false'){
     this.router.navigate(['/login']);
-    }else{
+   }else{
        this.adminService.getAllEmployee().subscribe((res:any)=>{
        this.assignee=res.Data
       });

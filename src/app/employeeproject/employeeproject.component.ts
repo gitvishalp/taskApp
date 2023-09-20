@@ -15,9 +15,9 @@ export class EmployeeprojectComponent implements OnInit {
   constructor(private empService:EmployeeServiceService,private router:Router){}
 
   ngOnInit(): void {
-      if(this.empService.isLogined()==false){
-        this.router.navigate(['/login']);
-      }else{
+    if(localStorage.getItem('userLogin')=='false'){
+      this.router.navigate(['/login'])
+    }else{
         this.empService.getEmpAllProject()
         .subscribe((res:any)=>{
           this.dataSource=res.Data;

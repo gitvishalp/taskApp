@@ -10,8 +10,6 @@ export class EmployeeServiceService {
   pending:String="PENDING"
   inprogress:String="IN PROGRESS"
   completed:String ="COMPLETED"
-  token:String=''
-  islogin=false;
   response:any={}
   constructor(private http:HttpClient) { }
   
@@ -20,49 +18,49 @@ export class EmployeeServiceService {
     .pipe(tap((data)=>{
       this.response=data
       if(this.response.Status===200){
-       this.token= this.response.Data.Token
-       this.islogin=true
+       localStorage.setItem('userToken',this.response.Data.Token);
+       localStorage.setItem('userLogin','true');
       }
     }))
   }
   getEmployeeDetails(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee',{headers:header});
   }
   getEmpAllTask(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/task',{headers:header});
   }
   getActiveTask(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/task/CREATED',{headers:header});
   }
   getPendingTask(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/task/PENDING',{headers:header});
   }
   getInprogresstask(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/task/IN PROGRESS',{headers:header});
   }
   getCompletedTask(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/task/COMPLETED',{headers:header});
   }
   getEmpAllProject(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/project',{headers:header});
   }
   getProjectCount(){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
     return this.http.get('http://localhost:8081/v1/employee/project-count',{headers:header});
   }
   changePassword(formData:{NewPass:String}){
-    const header = new HttpHeaders().set('Authorization',`Bearer ${this.token}`);
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
      return this.http.put('http://localhost:8081/v1/employee/change-password',formData,{headers:header});
   }
-  
-  isLogined(){
-    return this.islogin;
+  logout(){
+    localStorage.removeItem('userToken');
+    localStorage.setItem('userLogin','false');
   }
 }

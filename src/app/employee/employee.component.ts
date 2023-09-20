@@ -19,14 +19,14 @@ export class EmployeeComponent implements OnInit {
 
  }
  ngOnInit(): void {
-     if(this.adminService.isLogined()==false){
-     this.router.navigate(['/login'])
-     }else{
+  if(localStorage.getItem('isLogin')=='false'){
+    this.router.navigate(['/login']);
+   }else{
       this.adminService.getAllEmployee()
       .subscribe((res:any)=>{
         this.dataSource=res.Data
       })
-     }
+    }
  }
  gettask(empId:String){
   this.router.navigate(['/task-by-employee'],{queryParams:{employeeId:empId}});

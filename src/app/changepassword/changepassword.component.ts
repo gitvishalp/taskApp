@@ -14,7 +14,7 @@ export class ChangepasswordComponent implements OnInit {
 
   }
   ngOnInit(): void {
-      if(this.employeeService.isLogined()==false){
+      if(localStorage.getItem('userLogin')=='false'){
         this.router.navigate(['/login'])
       }
   }
