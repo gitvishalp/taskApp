@@ -1,0 +1,22 @@
+<app-empsidenav></app-empsidenav>
+<div class="container">
+    <div class="msg">
+        <p>{{delResponse.Message}}</p>
+    </div>
+    <div class="notification-drawr">
+        <div class="notification" *ngFor="let n of notifications" 
+        >
+            <div class="info">
+                <p class="Title"  (click)="tasks()">{{n.title}}</p>
+                <p class="Message">{{n.message}}</p>
+            </div>
+           <div class="action">
+            <button mat-fab color="primary" aria-label="Example icon button with a delete icon"
+            (click)="onDelete(n.id)"
+            >
+                <mat-icon>delete</mat-icon>
+              </button>
+           </div>
+        </div>
+    </div>
+</div>

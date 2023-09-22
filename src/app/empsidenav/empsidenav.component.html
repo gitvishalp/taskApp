@@ -12,7 +12,12 @@
     <button mat-icon-button class="example-icon" routerLink="/emp-task" aria-label="Example icon-button with menu icon" style="margin-left: 10px;">
       <mat-icon>task_alt</mat-icon>
     </button>
-    <div class="info">{{employee.Data.name}}
+    <button mat-icon-button class="example-icon" routerLink="/emp-notification" aria-label="Example icon-button with menu icon" style="margin-left: 10px;">
+      <mat-icon>notifications_active</mat-icon>
+    </button>
+
+    
+    <div class="info"> {{employee.Data.name}}
       <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon">
         <mat-icon>logout</mat-icon>
       </button>
@@ -22,7 +27,7 @@
   <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-list>
-          <div mat-subheader><mat-icon>person</mat-icon> {{employee.Data.name}}</div>
+          <div mat-subheader><mat-icon>person</mat-icon> User</div>
           <mat-divider></mat-divider>
           <mat-list-item>
             <mat-icon matListItemIcon>home</mat-icon>
@@ -37,6 +42,10 @@
           <mat-list-item>
             <mat-icon matListItemIcon>task_alt</mat-icon>
             <div matListItemTitle routerLink="/emp-task">My Tasks</div>
+          </mat-list-item>
+          <mat-list-item>
+            <mat-icon matListItemIcon>notifications_active</mat-icon>
+            <div matListItemTitle routerLink="/emp-notification">Notifications</div>
           </mat-list-item>
         </mat-list>
       </mat-drawer>

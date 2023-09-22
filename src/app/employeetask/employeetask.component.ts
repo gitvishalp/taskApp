@@ -8,7 +8,6 @@ import { EmployeeServiceService } from '../employee-service.service';
   styleUrls: ['./employeetask.component.css']
 })
 export class EmployeetaskComponent implements OnInit{
-
   displayedColumns: string[] = ['id','project','title','description','priority','status','remark','expectedCompletionDate','action'];
   dataSource:any = [];
   constructor(private router:Router, private empService:EmployeeServiceService){}
@@ -19,10 +18,11 @@ export class EmployeetaskComponent implements OnInit{
       this.empService.getEmpAllTask()
       .subscribe((res:any)=>{
         this.dataSource=res.Data
+        console.log(this.dataSource)
       })
     }
   }
   updateTask(taskId:String){
-    this.router.navigate(['/update-task'],{queryParams:{taskId:taskId}});
+    this.router.navigate(['/emp-update-task'],{queryParams:{taskId:taskId}});
   }
 }

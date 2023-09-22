@@ -7,9 +7,9 @@ import { Observable, tap } from 'rxjs';
 })
 export class EmployeeServiceService {
   active:String='CREATED'
-  pending:String="PENDING"
-  inprogress:String="IN PROGRESS"
-  completed:String ="COMPLETED"
+  pending:String='PENDING'
+  inprogress:String='IN PROGRESS'
+  completed:String ='COMPLETED'
   response:any={}
   constructor(private http:HttpClient) { }
   
@@ -41,7 +41,7 @@ export class EmployeeServiceService {
   }
   getInprogresstask(){
     const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
-    return this.http.get('http://localhost:8081/v1/employee/task/IN PROGRESS',{headers:header});
+    return this.http.get(`http://localhost:8081/v1/employee/task/${this.inprogress}`,{headers:header});
   }
   getCompletedTask(){
     const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
@@ -58,6 +58,18 @@ export class EmployeeServiceService {
   changePassword(formData:{NewPass:String}){
     const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
      return this.http.put('http://localhost:8081/v1/employee/change-password',formData,{headers:header});
+  }
+  updateTask(formData:{Status:String,Remarks:String},taskId:any){
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
+    return this.http.put(`http://localhost:8081/v1/employee/task/${taskId}`,formData,{headers:header});
+  }
+  getAllNotification(){
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
+    return this.http.get('http://localhost:8081/v1/employee/notification',{headers:header});
+  }
+  deleteNotification(notificationId:String){
+    const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('userToken')}`);
+    return this.http.delete(`http://localhost:8081/v1/employee/notification/${notificationId}`,{headers:header});
   }
   logout(){
     localStorage.removeItem('userToken');

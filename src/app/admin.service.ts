@@ -8,9 +8,9 @@ export class AdminService {
 
   constructor(private http:HttpClient) { }
   active:String='CREATED'
-  pending:String="PENDING"
-  inprogress:String="IN PROGRESS"
-  completed:String ="COMPLETED"
+  pending:String='PENDING'
+  inprogress:String='IN PROGRESS'
+  completed:String ='COMPLETED'
   response:any={}
   adminLogin(formData:{UserName:String,Password:String}): Observable<any>{
      return this.http.post<any>('http://localhost:8081/v1/admin/Login',formData)
@@ -45,6 +45,10 @@ export class AdminService {
  dashboardPendingTask(){
   const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
   return this.http.get(`http://localhost:8081/v1/admin/CountTask/${this.pending}`,{headers:header});
+ }
+ dashboardInprogressTask(){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+  return this.http.get(`http://localhost:8081/v1/admin/CountTask/${this.inprogress}`,{headers:header});
  }
 dashboardCompletedTask(){
   const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
@@ -100,6 +104,14 @@ deleteProject(projectId:String){
 deleteTaskById(taskId:String){
   const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
   return this.http.delete(`http://localhost:8081/v1/admin/Task/${taskId}`,{headers:header});
+}
+getAllNotification(){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+  return this.http.get(`http://localhost:8081/v1/admin/notification`,{headers:header});
+}
+deleteNotification(notificationId:String){
+  const header = new HttpHeaders().set('Authorization',`Bearer ${localStorage.getItem('token')}`);
+  return this.http.delete(`http://localhost:8081/v1/admin/notification/${notificationId}`,{headers:header});
 }
 logout(){
   localStorage.removeItem('token');

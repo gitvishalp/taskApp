@@ -15,6 +15,9 @@ import { EmployeedashboardComponent } from './employeedashboard/employeedashboar
 import { ChangepasswordComponent } from './changepassword/changepassword.component';
 import { EmployeetaskComponent } from './employeetask/employeetask.component';
 import { EmployeeprojectComponent } from './employeeproject/employeeproject.component';
+import { EmployeeupdatetaskComponent } from './employeeupdatetask/employeeupdatetask.component';
+import { AdminnotificationComponent } from './adminnotification/adminnotification.component';
+import { EmpnotificationComponent } from './empnotification/empnotification.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -32,7 +35,10 @@ const routes: Routes = [
   {path:'employee-dashboard',component:EmployeedashboardComponent},
   {path:'change-password',component:ChangepasswordComponent},
   {path:'emp-task',component:EmployeetaskComponent},
-  {path:'emp-project',component:EmployeeprojectComponent}
+  {path:'emp-project',component:EmployeeprojectComponent},
+  {path:'emp-update-task',component:EmployeeupdatetaskComponent},
+  {path:'adm-notification',component:AdminnotificationComponent},
+  {path:'emp-notification',component:EmpnotificationComponent}
 ];
 
 @NgModule({

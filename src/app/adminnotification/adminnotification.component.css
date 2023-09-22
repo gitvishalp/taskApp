@@ -1,0 +1,41 @@
+
+.container{
+   
+}
+.notification-drawr{
+    margin-top: 20px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+.notification{
+    margin-top: 10px;
+    padding: 2px;
+    background-color: #ffff;
+    border-radius: 5px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    display: flex;
+}
+.Title{
+    font-size: 18px;
+    color: #344BB0;
+    cursor: pointer;
+}
+.Title:hover{
+    color: green;
+}
+.Message{
+    margin-left: 27px;
+}
+.info{
+    margin-left: 20px;
+}
+.action{
+    cursor: pointer;
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: 20px;
+}
+.msg{
+    text-align: center;
+    color: red;
+}

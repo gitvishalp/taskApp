@@ -45,6 +45,9 @@ import { ChangepasswordComponent } from './changepassword/changepassword.compone
 import { EmpsidenavComponent } from './empsidenav/empsidenav.component';
 import { EmployeetaskComponent } from './employeetask/employeetask.component';
 import { EmployeeprojectComponent } from './employeeproject/employeeproject.component';
+import { EmployeeupdatetaskComponent } from './employeeupdatetask/employeeupdatetask.component';
+import { AdminnotificationComponent } from './adminnotification/adminnotification.component';
+import { EmpnotificationComponent } from './empnotification/empnotification.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -66,6 +69,9 @@ import { EmployeeprojectComponent } from './employeeproject/employeeproject.comp
     EmpsidenavComponent,
     EmployeetaskComponent,
     EmployeeprojectComponent,
+    EmployeeupdatetaskComponent,
+    AdminnotificationComponent,
+    EmpnotificationComponent,
   ],
   imports: [
     BrowserModule,

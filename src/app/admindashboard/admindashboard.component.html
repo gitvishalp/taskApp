@@ -28,7 +28,7 @@
         <div class="example-ripple-container mat-elevation-z4" style="background-color: #FBF7DA;"
         matRipple (click)="activeTask()"
         >
-        <h1 style="color: #CFC048;">{{activeTaskResponse.Data}}</h1>
+        <h1 style="color: #CFC048;">{{activeTaskResponse.Data + inprogressTaskResponse.Data}}</h1>
      Active Tasks
     </div>
     <div class="example-ripple-container mat-elevation-z4" style="background-color: #F0F7D2;"

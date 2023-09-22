@@ -20,17 +20,21 @@ export class AdmindashboardComponent implements OnInit {
   inprogressResponse:any={Data:0}
   completeResponse:any={Data:0}
   activeTaskResponse:any={Data:0}
+  inprogressTaskResponse:any={Data:0}
   pendingTaskResponse:any={Data:0}
   completeTaskResponse:any={Data:0}
   ngOnInit(): void {
     if(localStorage.getItem('isLogin')=='false'){
       this.router.navigate(['/login']);
      }else{
-        this.adminService.dashboardActiveProject().subscribe(res=>{this.activeResponse=res});
+        this.adminService.dashboardActiveProject().subscribe(res=>{
+          this.activeResponse=res
+        });
         this.adminService.dashboardInprogressProject().subscribe(res=>{this.inprogressResponse=res});
         this.adminService.dashboardPendingProject().subscribe(res=>{this.pendingResponse=res});
         this.adminService.dashBoardCompletedProject().subscribe(res=>{this.completeResponse=res});
-        this.adminService.dashboardActiveTask().subscribe(res=>{this.activeTaskResponse=res});
+        this.adminService.dashboardActiveTask().subscribe(res=>{this.activeTaskResponse=res });
+        this.adminService.dashboardInprogressTask().subscribe(res=> {this.inprogressTaskResponse=res } );
         this.adminService.dashboardPendingTask().subscribe(res=>{this.pendingTaskResponse=res});
         this.adminService.dashboardCompletedTask().subscribe(res=>{this.completeTaskResponse=res})
   }

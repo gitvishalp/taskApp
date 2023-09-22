@@ -16,3 +16,9 @@
    mat-list-item:active {
      background-color: rgb(170, 170, 170);
    }
+
+   .info{
+    margin-left: auto;
+    margin-right: 0;
+    font-size: 18px;
+}
