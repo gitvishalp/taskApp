@@ -17,7 +17,7 @@
     </button>
 
     
-    <div class="info"><button mat-stroked-button color="basic" (click)="profile(employee.Data.id)">{{employee.Data.name}}</button>    
+    <div class="info"><button mat-stroked-button color="basic" (click)="profile()">{{employee.Data.name}}</button>    
       <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon">
         <mat-icon>logout</mat-icon>
       </button>
@@ -27,7 +27,7 @@
   <mat-drawer-container class="example-container" autosize>
       <mat-drawer #drawer class="example-sidenav" mode="side">
         <mat-list>
-          <div mat-subheader><mat-icon>person</mat-icon> User</div>
+          <div mat-subheader (click)="profile()" style="cursor: pointer;"><mat-icon>person</mat-icon>{{employee.Data.name}}</div>
           <mat-divider></mat-divider>
           <mat-list-item>
             <mat-icon matListItemIcon>home</mat-icon>

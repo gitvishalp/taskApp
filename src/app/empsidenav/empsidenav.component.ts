@@ -21,8 +21,8 @@ ngOnInit(): void {
     })
   }
 }
-profile(employeeId:String){
-this.router.navigate(['/emp-profile'],{queryParams:{employeeId:employeeId}});
+profile(){
+this.router.navigate(['/emp-profile']);
 }
   logout(){
   this.EmpService.logout();
