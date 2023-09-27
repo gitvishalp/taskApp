@@ -1,0 +1,28 @@
+.profile{
+    margin-top: 10px;
+    background-color: #ffff;
+    margin-right: 300px;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.name{
+    font-size: 20px;
+    color: #1A57AB;
+}
+.desig{
+    font-size: 16px;
+}
+.tag{
+    background-color: #eaeaea;
+    padding-left: 10px;
+    font-size: 18px;
+    border-radius: 5px;
+}
+.data{
+    color: #959595;
+    padding-left: 10px;
+}
+.action{
+    text-align: center;
+}

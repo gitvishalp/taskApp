@@ -17,7 +17,7 @@
     </button>
 
     
-    <div class="info"> {{employee.Data.name}}
+    <div class="info"><button mat-stroked-button color="basic" (click)="profile(employee.Data.id)">{{employee.Data.name}}</button>    
       <button mat-icon-button class="example-icon" (click)="logout()" aria-label="Example icon-button with menu icon">
         <mat-icon>logout</mat-icon>
       </button>

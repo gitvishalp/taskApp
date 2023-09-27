@@ -9,7 +9,7 @@ import { AdminService } from '../admin.service';
 })
 export class UpdatetaskComponent implements OnInit {
 
-
+isLoading:boolean = false;
 project:any=[]
 assignee:any=[]
 response:any={}
@@ -29,10 +29,12 @@ ngOnInit(): void {
 }
 onUpdateTask(formdata:{AssigneeId:String,ExpectedCompletion:Date,Status:String,Priority:String,Remarks:String}){
   console.log(formdata)
+  this.isLoading=true;
  this.adminService.updateTask(formdata,this.taskId)
  .subscribe(res=>{
   this.response=res
   if(this.response.Status==200){
+    this.isLoading=false;
     this.router.navigate(['/task'])
   }
  })

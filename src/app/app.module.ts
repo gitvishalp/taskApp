@@ -48,6 +48,8 @@ import { EmployeeprojectComponent } from './employeeproject/employeeproject.comp
 import { EmployeeupdatetaskComponent } from './employeeupdatetask/employeeupdatetask.component';
 import { AdminnotificationComponent } from './adminnotification/adminnotification.component';
 import { EmpnotificationComponent } from './empnotification/empnotification.component';
+import { LoaderComponent } from './loader/loader.component';
+import { ProfileComponent } from './profile/profile.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -72,6 +74,8 @@ import { EmpnotificationComponent } from './empnotification/empnotification.comp
     EmployeeupdatetaskComponent,
     AdminnotificationComponent,
     EmpnotificationComponent,
+    LoaderComponent,
+    ProfileComponent,
   ],
   imports: [
     BrowserModule,

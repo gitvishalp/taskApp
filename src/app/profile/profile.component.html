@@ -1,0 +1,26 @@
+<app-empsidenav></app-empsidenav>
+<h2 style="color: #969494; margin-left: 20rem;">Profile </h2>
+<mat-divider style="margin-left: 20rem;"></mat-divider>
+<div class="container" style="margin-left: 20rem;">
+    <div class="profile">
+      <div class="details">
+        <p class="name"><b>{{employee.Data.name}}</b></p>
+        <p class="desig"><b>{{employee.Data.designition.name}}</b></p>
+      </div><hr>
+      <div class="personal">
+        <p class="tag">Employee Id</p>
+        <p class="data">{{employee.Data.id}}</p>
+        <p class="tag">D.O.B.</p>
+        <p class="data">{{employee.Data.dateOfBirth}}</p>
+        <p class="tag">Email</p>
+        <p class="data">{{employee.Data.email}}</p>
+        <p class="tag">Phone Number</p>
+        <p class="data">{{employee.Data.phoneNumber}}</p>
+        <p class="tag">Active Tasks</p>
+        <p class="data">{{employee.Data.activeTasks}}</p>
+      </div>
+      <div class="action">
+        <button mat-raised-button color="primary" routerLink="/change-password">Change Password</button>
+      </div>
+    </div>
+</div>

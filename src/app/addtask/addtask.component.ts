@@ -8,7 +8,7 @@ import { AdminService } from '../admin.service';
   styleUrls: ['./addtask.component.css']
 })
 export class AddtaskComponent implements OnInit {
-
+isLoading:boolean = false;
 project:any=[]
 assignee:any=[]
 response:any={}
@@ -29,10 +29,12 @@ ngOnInit(): void {
 }
 onAddTask(formdata:{Title:String,Description:String,ProjectId:String,Priority:String,AssigneeId:String,ExpectedCompletion:Date}){
  console.log(formdata)
+ this.isLoading=true;
  this.adminService.addTask(formdata)
  .subscribe(res=>{
   this.response=res
   if(this.response.Status==200){
+    this.isLoading=false;
     this.router.navigate(['/admin-dashboard'])
   }
  })

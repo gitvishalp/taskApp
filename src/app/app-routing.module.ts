@@ -18,6 +18,7 @@ import { EmployeeprojectComponent } from './employeeproject/employeeproject.comp
 import { EmployeeupdatetaskComponent } from './employeeupdatetask/employeeupdatetask.component';
 import { AdminnotificationComponent } from './adminnotification/adminnotification.component';
 import { EmpnotificationComponent } from './empnotification/empnotification.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch:'full' },
@@ -38,7 +39,8 @@ const routes: Routes = [
   {path:'emp-project',component:EmployeeprojectComponent},
   {path:'emp-update-task',component:EmployeeupdatetaskComponent},
   {path:'adm-notification',component:AdminnotificationComponent},
-  {path:'emp-notification',component:EmpnotificationComponent}
+  {path:'emp-notification',component:EmpnotificationComponent},
+  {path:'emp-profile',component:ProfileComponent}
 ];
 
 @NgModule({
